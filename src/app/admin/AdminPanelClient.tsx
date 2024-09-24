@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 interface Upload {
+  name: string;
   id: number;
   fileName: string;
   description: string;
@@ -51,6 +52,7 @@ export default function AdminPanelClient({ uploads: initialUploads }: { uploads:
           uploads.map((upload) => (
             <li key={upload.id}>
               <p>
+              <strong>Name:</strong> {upload.name}<br />
                 <strong>File Name:</strong> {upload.fileName}<br />
                 <strong>Description:</strong> {upload.description}<br />
                 <strong>Status:</strong> {upload.status}<br />
