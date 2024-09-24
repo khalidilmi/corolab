@@ -1,4 +1,14 @@
+// next.config.js
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    reactStrictMode: true,
+    experimental: {
+      appDir: true,
+    },
+    webpack: (config) => {
+      return config;
+    },
+  };
+  
+  export default nextConfig;
+  
