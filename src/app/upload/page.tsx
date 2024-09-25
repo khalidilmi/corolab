@@ -1,39 +1,16 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
-
-// Definer en type for hver upload
-interface Upload {
-  id: number;
-  fileName: string;
-  name: string;
-  description: string;
-  company: string;
-  status: string;
-  feedback?: string; // Tilføj feedback som et valgfrit felt
-}
-
-export default function UserUploads() {
-  // Angiv at uploads er en liste af 'Upload'-objekter
-  const [uploads, setUploads] = useState<Upload[]>([]);
+export default function UserUpload() {
+  const router = useRouter();
   const [file, setFile] = useState<File | null>(null);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [company, setCompany] = useState('');
   const [message, setMessage] = useState('');
 
-  // Hent brugerens uploads ved page load
-  useEffect(() => {
-    async function fetchUploads() {
-      const res = await fetch('/api/uploads');
-      const data = await res.json();
-      setUploads(data.uploads);
-    }
-    fetchUploads();
-  }, []);
-
-  // Håndter fil-upload
   const handleUpload = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -60,41 +37,17 @@ export default function UserUploads() {
       setDescription('');
       setCompany('');
 
-      // Opdater listen over uploads efter en succesfuld upload
-      const data = await res.json();
-      setUploads((prevUploads) => [data.upload, ...prevUploads]); // Dette opdaterer listen korrekt
+      router.push('/uploads');
     } else {
       setMessage('File upload failed.');
     }
   };
 
   return (
-    <div>
-      <h1>Your Uploads</h1>
-      {uploads.length === 0 ? (
-        <p>No uploads yet</p>
-      ) : (
-        <ul>
-          {uploads.map((upload) => (
-            <li key={upload.id}>
-              <p>
-                <strong>File Name:</strong> {upload.fileName}<br />
-                <strong>Status:</strong> {upload.status === 'pending' ? 'In Process' : upload.status === 'approved' ? 'Approved' : 'Rejected'}<br />
-                {/* Tilføj feedback hvis det findes */}
-                {upload.feedback && (
-                  <p>
-                    <strong>Feedback:</strong> {upload.feedback}
-                  </p>
-                )}
-              </p>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      <h2>Upload New File</h2>
+    <div className="container">
+      <h1>Upload New File</h1>
       <form onSubmit={handleUpload}>
-        <div>
+        <div className="form-group">
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -104,7 +57,7 @@ export default function UserUploads() {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="description">Description</label>
           <input
             type="text"
@@ -114,7 +67,7 @@ export default function UserUploads() {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="company">Company</label>
           <input
             type="text"
@@ -124,7 +77,7 @@ export default function UserUploads() {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="file">File</label>
           <input
             type="file"
@@ -139,3 +92,4 @@ export default function UserUploads() {
     </div>
   );
 }
+
