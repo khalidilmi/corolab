@@ -7,26 +7,50 @@
 
 /* Applying basic styles to the entire document */
 html, body {
+<<<<<<< HEAD
   font-family: Arial, sans-serif;
   background-color: #f4f4f9;
   color: #333;
   height: 100%;
+=======
+  font-family: 'Arial', sans-serif;
+  background-color: #999999;
+  color: #333;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+>>>>>>> 1574f885894b428637144f879b61c7b8b1f10719
 }
 
 /* Centering and styling the container */
 .container {
   width: 100%;
+<<<<<<< HEAD
   max-width: 600px; /* Not too big, not too small */
   margin: 0 auto;
   padding: 20px;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+=======
+  max-width: 500px; /* Not too big, not too small */
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+>>>>>>> 1574f885894b428637144f879b61c7b8b1f10719
 }
 
 /* Title styling */
 h1 {
   text-align: center;
+<<<<<<< HEAD
   margin-bottom: 20px;
 }
 
@@ -57,10 +81,54 @@ input[type="text"], textarea {
 textarea {
   height: 100px;
   resize: vertical;
+=======
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Paragraph for messages */
+p {
+  color: #555;
+}
+
+/* Styling the form and its elements */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+input[type="text"], input[type="file"], textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus, input[type="file"]:focus, textarea:focus {
+  border-color: #0070f3;
+  outline: none;
+>>>>>>> 1574f885894b428637144f879b61c7b8b1f10719
 }
 
 /* Button styling */
 button {
+<<<<<<< HEAD
   padding: 10px 20px;
   background-color: #0070f3;
   color: white;
@@ -73,6 +141,20 @@ button {
 
 button:hover {
   background-color: #005bb5;
+=======
+  padding: 12px;
+  background-color: #02970d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #02770d;
+>>>>>>> 1574f885894b428637144f879b61c7b8b1f10719
 }
 
 /* Styling for lists (uploads) */

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -62,3 +63,8 @@ export default function ViewUploadsPage() {
     </div>
   );
 }
+=======
+//hvorfor er den tom
+//add noget mere tekst
+//mere tekst
+>>>>>>> 1574f885894b428637144f879b61c7b8b1f10719
