@@ -1,7 +1,7 @@
 // In your main navigation or layout (optional):
 export default function Navigation() {
   return (
-    <div className="container">
+    <div className="upload-container">
     <nav>
       <ul>
         <li>

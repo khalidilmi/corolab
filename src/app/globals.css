@@ -19,7 +19,7 @@ html, body {
   margin: 0 auto;
   padding: 30px;
   background-color: white;
-  border-radius: 8px;
+  border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -155,24 +155,24 @@ footer {
   color: #777;
 }
 
-/* Container for the upload form */
-.container {
-  margin-top: 30px; /* Add some space above the container */
+.upload-page {
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.upload-container {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd; /* Light gray border */
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-/* Optional: Adjusting the spacing between the form elements */
-.upload-container .form-group {
-  margin-bottom: 15px;
-}
-
-.upload-container button {
-  margin-top: 15px;
-  border-radius: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 

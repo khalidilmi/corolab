@@ -32,7 +32,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="container">
+    <div className="upload-container">
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
         <div>

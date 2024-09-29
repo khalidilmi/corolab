@@ -27,7 +27,7 @@ export default function UserUploads() {
   }, []);
 
   return (
-    <div>
+    <div className="upload-container">
       <h1>Your Uploads</h1>
       {uploads.length === 0 ? (
         <p>No uploads yet</p>

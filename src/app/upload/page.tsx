@@ -1,4 +1,5 @@
 'use client';
+
 import { useState } from 'react';
 import Link from 'next/link'; // Import Link from Next.js
 
@@ -41,15 +42,17 @@ export default function Upload() {
   };
 
   return (
-    <div>
+    <div className="upload-page">
       <h1>Upload New File</h1>
-      {/* Button to navigate to the uploads page */}
-      <Link href="/uploads">
-        <button type="button" style={{ marginTop: '20px' }}>Go to Uploads Page</button>
-      </Link>
+      {/* Center the button */}
+      <div className="button-container">
+        <Link href="/uploads">
+          <button type="button" className="button">Go to Uploads</button>
+        </Link>
+      </div>
 
       {/* Container around the form */}
-      <div className="container">
+      <div className="upload-container">
         <form onSubmit={handleUpload}>
           <div className="form-group">
             <label htmlFor="name">Name</label>

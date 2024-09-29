@@ -33,7 +33,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="container">
+    <div className="upload-container">
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <div>
