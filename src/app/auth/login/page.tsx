@@ -27,7 +27,7 @@ export default function LoginPage() {
       if (session?.user.role === 'admin') {
         router.push('/admin'); // Omdiriger til admin-panelet
       } else {
-        router.push('/uploads'); // Omdiriger til uploads-siden for normale brugere
+        router.push('/upload'); // Omdiriger til uploads-siden for normale brugere
       }
     }
   };
