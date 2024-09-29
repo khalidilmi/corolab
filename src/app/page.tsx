@@ -1,6 +1,7 @@
 // In your main navigation or layout (optional):
 export default function Navigation() {
   return (
+    <div className="container">
     <nav>
       <ul>
         <li>
@@ -11,5 +12,6 @@ export default function Navigation() {
         </li>
       </ul>
     </nav>
+    </div>
   );
 }

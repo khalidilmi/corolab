@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import Link from 'next/link'; // Import Link from Next.js
 
@@ -46,51 +47,54 @@ export default function Upload() {
       <Link href="/uploads">
         <button type="button" style={{ marginTop: '20px' }}>Go to Uploads Page</button>
       </Link>
-      <form onSubmit={handleUpload}>
-        <div>
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="description">Description</label>
-          <input
-            type="text"
-            id="description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="company">Company</label>
-          <input
-            type="text"
-            id="company"
-            value={company}
-            onChange={(e) => setCompany(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="file">File</label>
-          <input
-            type="file"
-            id="file"
-            onChange={(e) => setFile(e.target.files?.[0] || null)}
-            required
-          />
-        </div>
-        <button type="submit">Upload</button>
-      </form>
-      {message && <p>{message}</p>}
 
-      
+      {/* Container around the form */}
+      <div className="container">
+        <form onSubmit={handleUpload}>
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="description">Description</label>
+            <input
+              type="text"
+              id="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="company">Company</label>
+            <input
+              type="text"
+              id="company"
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="file">File</label>
+            <input
+              type="file"
+              id="file"
+              onChange={(e) => setFile(e.target.files?.[0] || null)}
+              required
+            />
+          </div>
+          <button type="submit">Upload</button>
+        </form>
+        {message && <p>{message}</p>}
+      </div>
     </div>
   );
 }
+
