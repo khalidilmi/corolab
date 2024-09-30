@@ -8,7 +8,7 @@ interface Upload {
   fileName: string;
   description: string;
   status: string;
-  feedback?: string; // Feedback kan være valgfri
+  feedback?: string | null ; // Feedback kan være valgfri
 }
 
 export default function AdminPanelClient({ uploads: initialUploads }: { uploads: Upload[] }) {
