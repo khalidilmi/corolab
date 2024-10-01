@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link'; // Import Link from Next.js
+import Link from 'next/link';
+import { Navbar } from '../component/navbar';
 
 export default function Upload() {
   const [file, setFile] = useState<File | null>(null);
@@ -43,15 +44,14 @@ export default function Upload() {
 
   return (
     <div className="upload-page">
+      <Navbar/>
       <h1>Upload New File</h1>
-      {/* Center the button */}
       <div className="button-container">
         <Link href="/uploads">
           <button type="button" className="button">Go to Uploads</button>
         </Link>
       </div>
 
-      {/* Container around the form */}
       <div className="upload-container">
         <form onSubmit={handleUpload}>
           <div className="form-group">

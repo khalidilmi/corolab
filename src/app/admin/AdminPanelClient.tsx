@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import React from 'react';
 
 interface Upload {
   name: string;
@@ -8,7 +9,7 @@ interface Upload {
   fileName: string;
   description: string;
   status: string;
-  feedback?: string; // Feedback kan være valgfri
+  feedback?: any;
 }
 
 export default function AdminPanelClient({ uploads: initialUploads }: { uploads: Upload[] }) {

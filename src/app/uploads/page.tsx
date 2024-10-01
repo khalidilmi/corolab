@@ -10,7 +10,7 @@ interface Upload {
   description: string;
   company: string;
   status: string;
-  feedback?: string; // Tilføj feedback som et valgfrit felt
+  feedback: any;
 }
 
 export default function UserUploads() {
