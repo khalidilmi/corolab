@@ -16,6 +16,7 @@ export default function AdminPanelClient({ uploads: initialUploads }: { uploads:
   const [uploads, setUploads] = useState(initialUploads);
   const [message, setMessage] = useState(''); // Til bekræftelse
   const [feedback, setFeedback] = useState(''); // Feedback-tilstand
+  const [currentId, setCurrentId] = useState(1);
 
   const handleStatusChange = async (id: number, newStatus: string) => {
     setMessage(''); // Nulstil beskeden før handling
@@ -45,7 +46,7 @@ export default function AdminPanelClient({ uploads: initialUploads }: { uploads:
 
   return (
     <div>
-      {message && <p style={{ color: 'green' }}>{message}</p>} {/* Bekræftelsesmeddelelse */}
+      {message && <p style={{ color: 'green' }}>{message}</p>}
       <ul>
         {uploads.length === 0 ? (
           <p>No pending uploads</p>

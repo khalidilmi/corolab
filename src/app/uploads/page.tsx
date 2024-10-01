@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { Navbar } from '../component/navbar';
 
 // Definer en type for hver upload
 interface Upload {
@@ -28,6 +29,7 @@ export default function UserUploads() {
 
   return (
     <div className="upload-container">
+      <Navbar/>
       <h1>Your Uploads</h1>
       {uploads.length === 0 ? (
         <p>No uploads yet</p>

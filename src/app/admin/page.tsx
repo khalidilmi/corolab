@@ -1,4 +1,5 @@
 import { prisma } from '../../lib/prisma';
+import { Navbar } from '../component/navbar';
 import AdminPanelClient from './AdminPanelClient'; // Klient-side komponent
 
 export default async function AdminUploads() {
@@ -10,6 +11,7 @@ export default async function AdminUploads() {
 
   return (
     <div>
+      <Navbar/>
       <h1>Admin Panel - Pending Uploads</h1>
       {/* Send upload-dataen til klientkomponenten for at håndtere statusændringer */}
       <AdminPanelClient uploads={uploads} />
